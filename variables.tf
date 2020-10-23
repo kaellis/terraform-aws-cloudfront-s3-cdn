@@ -173,6 +173,12 @@ variable "forward_header_values" {
   default     = ["Access-Control-Request-Headers", "Access-Control-Request-Method", "Origin"]
 }
 
+variable "custom_origin_headers" {
+  type        = list
+  description = "A list of key-value pairs to pass to the origin"
+  default     = []
+}
+
 variable "price_class" {
   type        = string
   default     = "PriceClass_100"

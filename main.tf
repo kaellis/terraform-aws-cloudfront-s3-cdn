@@ -204,7 +204,7 @@ resource "aws_cloudfront_distribution" "default" {
     domain_name = local.bucket_domain_name
     origin_id   = module.this.id
     origin_path = var.origin_path
-
+    custom_header = var.custom_origin_headers
     dynamic "s3_origin_config" {
       for_each = ! var.website_enabled ? [1] : []
       content {
